@@ -3,6 +3,7 @@
 This repository includes detailed experimental results and full references of the paper [*Overlooked Trustworthiness of Explainability in Medical AI*](https://).
 
 - [Overview of XAI Methods in Medical AI](#overview-of-xai-methods-in-medical-ai)
+- [How to run the projects](#how-to-run-the-projects)
 - [Dataset Information](#dataset-information)
 - [More Training Details](#more-training-details)
     - [AI Model Training Details](#ai-model-training-details)
@@ -24,6 +25,71 @@ This repository includes detailed experimental results and full references of th
 | [Integrated Gradients (IG)](http://proceedings.mlr.press/v70/sundararajan17a/sundararajan17a.pdf) | It computes the average gradient as the input is varied from the baseline (often zero) to the actual input value. | [1] [Using a Deep Learning Algorithm and Integrated Gradients Explanation to Assist Grading for Diabetic Retinopathy](https://www.sciencedirect.com/science/article/pii/S0161642018315756). Ophthalmology, 2019, 126(4): 552-564. <br> [2] [Detection of Anaemia from Retinal Fundus Images via Deep Learning](https://www.nature.com/articles/s41551-019-0487-z). Nature Biomedical Engineering, 2020, 4(1): 18-27. <br> [3] [AI for Radiographic COVID-19 Detection Selects Shortcuts over Signal](https://www.nature.com/articles/s42256-021-00338-7.pdf). Nature Machine Intelligence, 2021: 1-10. <br> [4] [Weakly Supervised Lesion Localization for Age-Related Macular Degeneration Detection using Optical Coherence Tomography Images](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0215076 ). PloS one, 2019, 14(4): e0215076. <br> [5] [Pathomic Fusion: An Integrated Framework for Fusing Histopathology and Genomic Features for Cancer Diagnosis and Prognosis](https://arxiv.org/pdf/1912.08937.pdf). IEEE TMI, 2021. <br> [6] [Iterative Augmentation of Visual Evidence for Weakly-Supervised Lesion Localization in Deep Interpretability Frameworks: Application to Color Fundus Images](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9103111). IEEE TMI, 2020, 39(11): 3499-3511. <br> [7] [Explainable AI for Medical Imaging: Deep-Learning CNN Ensemble for Classification of Estrogen Receptor Status from Breast MRI](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11314/113140Z/Explainable-AI-for-medical-imaging--deep-learning-CNN-ensemble/10.1117/12.2549298.full). SPIE Medical Imaging 2020. <br> [8] [Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging](https://pubs.rsna.org/doi/pdf/10.1148/ryai.2021200267), Radiology: AI, 2021, 3(6): e200267.|
 | [Smoothed Gradient (SG)](https://arxiv.org/abs/1706.03825 ) | An improvement on the gradient method which averages the gradient over multiple inputs with additional noise. | [1] [Detection of Anaemia from Retinal Fundus Images Via Deep Learning](https://www.nature.com/articles/s41551-019-0487-z ). Nature Biomedical Engineering, 2020, 4(1): 18-27. <br> [2] [Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging](https://pubs.rsna.org/doi/pdf/10.1148/ryai.2021200267), Radiology: AI, 2021, 3(6): e200267. <br> [3] [Explainable AI for Medical Imaging: Deep-Learning CNN Ensemble for Classification of Estrogen Receptor Status from Breast MRI](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11314/113140Z/Explainable-AI-for-medical-imaging--deep-learning-CNN-ensemble/10.1117/12.2549298.full). SPIE Medical Imaging 2020. <br> [4] [Prediction of Lung and Colon Cancer through Analysis of Histopathological Images by Utilizing Pre-trained CNN Models with Visualization of Class Activation and Saliency Maps](https://dl.acm.org/doi/pdf/10.1145/3442536.3442543). AICCC 2020.|
 | [XRAI](https://openaccess.thecvf.com/content_ICCV_2019/papers/Kapishnikov_XRAI_Better_Attributions_Through_Regions_ICCV_2019_paper.pdf) | It builds on integrated gradients by starting with a baseline image and incrementally adding regions that offer maximal attribution gain. | [1] [Predicting Sex from Retinal Fundus Photographs Using Automated Deep Learning](https://www.nature.com/articles/s41598-021-89743-x). Nature Scientific Reports, 2021, 11(1): 1-8. <br> [2] [Assessing the Trustworthiness of Saliency Maps for Localizing Abnormalities in Medical Imaging](https://pubs.rsna.org/doi/pdf/10.1148/ryai.2021200267), Radiology: AI, 2021, 3(6): e200267.|
+
+## How to run the projects
+### Overview
+
+The whole project includes three parts
+**Part I** A case study to allow interested readers directly verify our method using provided sample data;
+**Part II** The code for training deep neural networks on the CheXpert Dataset; and
+**Part III** The code for generating images for evaluating relevance and resistance of different saliency methods.
+
+### Part I
+
+__Objective:__
+
+To allow interested readers directly verify our method using provided sample data  
+
+__File names:__
+
+`Relevance_case_study.ipynb`
+*(run this file to evaluate the **relevance** of all seven saliency methods)* 
+
+`Resistance_case_study.ipynb`
+*(run this file to evaluate the **resistance** of all seven saliency methods)*  
+
+__Notes:__
+The two image examples are originally generated for the relevance check (observation: Atelectasis, saliency map: VanillaBP) and resistance check (observation: Edema, saliency map: VanillaBP). The results on other saliency methods are similar to this one as reported in our main article. If you would like to have more images, you can run the code included in *Part III* below to generate images for the saliency methods.
+
+### Part II  
+
+__Objective:__
+
+To train deep neural networks on the CheXpert Dataset  
+
+__File names:__
+
+`Train_NeuralNetwork_on_CheXpert.ipynb`
+*(This notebook is to train your own model on CheXpert.)*  
+
+__Notes:__ 
+Users can select arbitrary model architectures (We provided DenseNet121, ResNet152 and MonileNet_V2)
+
+### Part III  
+
+__Objective:__  
+
+images for evaluating relevance and resistance of different saliency methods
+
+__File names:__ 
+
+`Generate_samples_for_trustworthiness_check.ipynb`
+*(run this file to generate image samples for trustworthiness evaluation)* 
+
+__Notes:__
+
+1. We have provided our implementation of seven different saliency methods in `ExplModel.py`  
+2. The method for generating adversarial images is in `attack.py`
+3. We directly use adversarial images generated by attacking GradCAM and IG to evaluate the trustworthiness of GuidedGradCAM and XRAI, respectively.  
+4. This notebook also includes the visualization and evaluation metrics.
+
+### Provided models and data samples
+
+In **Part I**, we provide examples of both model and images so that the interested readers can directly verify our ideas without training their own model or generating image samples. The locations of the provided model and image samples are as follows.
+1. We provided a DenseNet-121 model trained on the CheXpert dataset in the folder of `Model_sample`.  
+2. We provided 14 pairs of image samples for the relevance and resiestance evaluation (see **Part I**). These image samples are saved in the `Image_sample` folder. These image samples include the original and adversarial image pairs for evaluating both **relevance** and **resistance** of all the seven saliency methods.
+
+__Minimum GPU Memory requirement:__ 12GB
 
 ## Dataset Information
 
