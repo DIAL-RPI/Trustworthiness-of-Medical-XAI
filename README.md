@@ -1,6 +1,6 @@
 # Trustworthiness of Medical XAI
 
-This repository includes detailed experimental results and full references of our MICCAI-2022 paper [*Overlooked Trustworthiness of Saliency Maps*](https://https://link.springer.com/chapter/10.1007/978-3-031-16437-8_43), [*Med Arive version*](https://www.medrxiv.org/content/10.1101/2021.12.23.21268289v1).
+This repository includes detailed experimental results and full references of our MICCAI-2022 paper [*Overlooked Trustworthiness of Saliency Maps*](https://link.springer.com/chapter/10.1007/978-3-031-16437-8_43), [*Med Arive version*](https://www.medrxiv.org/content/10.1101/2021.12.23.21268289v1).
 
 - [Overview of XAI Methods in Medical AI](#overview-of-xai-methods-in-medical-ai)
 - [How to run the projects](#how-to-run-the-projects)
@@ -223,7 +223,8 @@ Besides the structural similarity index measure (SSIM), additional two evaluatio
 <img src="figure/similarity.jpg" alt="similarity" width="500"/>
 
 ## Citation
-`
+- If you find this code useful, please consider citing
+```
 @inproceedings{zhang2022overlooked,
   title={Overlooked Trustworthiness of Saliency Maps},
   author={Zhang, Jiajin and Chao, Hanqing and Dasegowda, Giridhar and Wang, Ge and Kalra, Mannudeep K and Yan, Pingkun},
@@ -232,5 +233,5 @@ Besides the structural similarity index measure (SSIM), additional two evaluatio
   year={2022},
   organization={Springer}
 }
-`
+```
 
