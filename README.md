@@ -233,5 +233,14 @@ Besides the structural similarity index measure (SSIM), additional two evaluatio
   year={2022},
   organization={Springer}
 }
+
+@inproceedings{zhang2022overlooked,
+  title={Revisiting the trustworthiness of saliency methods in radiology AI},
+  author={Zhang, Jiajin and Chao, Hanqing and Dasegowda, Giridhar and Wang, Ge and Kalra, Mannudeep K and Yan, Pingkun},
+  booktitle={Radiology: Artificial Intelligence},
+  pages={Vol. 6, Issue 1},
+  year={2024},
+  organization={RSNA}
+}
 ```
 
